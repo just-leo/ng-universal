@@ -1,0 +1,9 @@
+.alert {
+  padding: 20px;
+}
+
+p, .alert-success {
+  color: darkgreen;
+  background-color: lightgreen;
+  border: 1px solid darkgreen;
+}

@@ -1,0 +1,9 @@
+.alert {
+  padding: 20px;
+}
+
+p, .alert-warning {
+  color: red;
+  background-color: burlywood;
+  border: 1px solid red;
+}
