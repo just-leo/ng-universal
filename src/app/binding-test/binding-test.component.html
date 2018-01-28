@@ -1,6 +1,0 @@
-<label>username</label>
-<input [ngStyle]="{backgroundColor: getColor()}" class="form-control" [(ngModel)]="input" type="text">
-<p>
-  {{input}}
-</p>
-<p><button *ngIf="input.length" class="btn btn-primary" (click)="onResetInput(event)" [disabled]="">reset</button></p>
