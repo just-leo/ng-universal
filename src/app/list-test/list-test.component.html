@@ -1,0 +1,11 @@
+<button class="btn btn-primary" (click)="onToggle()">Display details</button>
+<p [ngClass]="{hidden: !showMore}">
+  your password is "root" ({{showMore}})
+</p>
+<p *ngIf="showMore">
+  your password is "root" ({{showMore}})
+</p>
+<p *ngFor="let log of logs; let index = index"
+   [ngStyle]="{backgroundColor: index > 4 ? 'red' : 'green'}"
+   [ngClass]="{'text-white': index >= 5}"
+>{{log}}</p>

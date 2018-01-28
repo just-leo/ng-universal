@@ -7,6 +7,8 @@ import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { AlertComponent } from './alert/alert.component';
 import { AlertSuccessComponent } from './alert-success/alert-success.component';
+import { BindingTestComponent } from './binding-test/binding-test.component';
+import { ListTestComponent } from './list-test/list-test.component';
 
 
 @NgModule({
@@ -16,6 +18,8 @@ import { AlertSuccessComponent } from './alert-success/alert-success.component';
     ServersComponent,
     AlertComponent,
     AlertSuccessComponent,
+    BindingTestComponent,
+    ListTestComponent,
   ],
   imports: [
     BrowserModule,
