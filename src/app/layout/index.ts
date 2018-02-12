@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 // import { ProfileDropdownComponent } from './header/profile-dropdown/profile-dropdown.component';
 import { DropdownDirective } from '../shared/dropdown.directive'
+import {AppRoutingModule} from "../app-routing.module";
 
 // Modules
 
@@ -22,8 +23,10 @@ import { DropdownDirective } from '../shared/dropdown.directive'
   exports: [
     HeaderComponent,
     FooterComponent,
+    DropdownDirective
   ],
   imports: [
+    AppRoutingModule
   ]
 })
 export class LayoutModule {}

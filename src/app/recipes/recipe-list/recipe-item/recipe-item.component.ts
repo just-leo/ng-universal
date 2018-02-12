@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import {Recipe} from "../../recipe.model";
+import {RecipeService} from "../../recipe.service";
 
 @Component({
   selector: 'app-recipe-item',
@@ -9,9 +11,14 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 export class RecipeItemComponent implements OnInit {
 
   //Input receive an originl name from scope and bind to another name (like alias)
-  @Input('recipeItem') recipe: {name: string, description: string, imagePath: string}
+  @Input('recipeItem') recipe: Recipe;
+  @Input() index: number;
 
-  constructor() { }
+  constructor(private recipeService: RecipeService) { }
+
+  onSelected() {
+    this.recipeService.recipeSelected.emit(this.recipe);
+  }
 
   //once after construct
   ngOnInit() {}
