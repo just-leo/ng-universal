@@ -3,16 +3,16 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --prod",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "prestart": "ng build --prod && ngc",
+    "start": "ts-node server.ts",
+    "build:universal": "npm run build:client-and-server-bundles && npm run webpack:server",
+    "build:client-and-server-bundles": "ng build --prod && ng build --prod --app 1 --output-hashing=false",
+    "webpack:server": "webpack --config webpack.server.config.js --display-error-details --progress --colors",
+    "serve:universal": "node dist/server.js"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^5.2.0",
+    "@angular/animations": "~5.2.5",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
     "@angular/core": "^5.2.0",
@@ -20,10 +20,14 @@
     "@angular/http": "^5.2.0",
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
+    "@angular/platform-server": "~5.2.5",
     "@angular/router": "^5.2.0",
+    "@nguniversal/express-engine": "~5.0.0-beta.5",
+    "@nguniversal/module-map-ngfactory-loader": "~5.0.0-beta.5",
     "bootstrap": "~3.3.7",
     "core-js": "^2.4.1",
     "rxjs": "^5.5.6",
+    "ts-loader": "~3.5.0",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
@@ -32,7 +36,7 @@
     "@angular/language-service": "^5.2.0",
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
-    "@types/node": "~6.0.60",
+    "@types/node": "~9.4.6",
     "codelyzer": "^4.0.1",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
