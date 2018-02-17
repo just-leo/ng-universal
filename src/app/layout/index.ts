@@ -3,9 +3,8 @@ import { NgModule } from '@angular/core';
 // Components
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-// import { ProfileDropdownComponent } from './header/profile-dropdown/profile-dropdown.component';
 import { DropdownDirective } from '../shared/dropdown.directive'
-import {AppRoutingModule} from "../app-routing.module";
+import { AppRoutingModule } from "../app-routing.module";
 
 // Modules
 
@@ -16,7 +15,6 @@ import {AppRoutingModule} from "../app-routing.module";
     FooterComponent,
     DropdownDirective
     // sub components
-    // ProfileDropdownComponent
 
     // pipes
   ],

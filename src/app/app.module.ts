@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { LayoutModule } from './layout/index';
@@ -32,7 +33,7 @@ import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.compon
     // DropdownDirective
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'ngapp'}),
     LayoutModule,
     AppRoutingModule
   ],
