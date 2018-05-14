@@ -10,7 +10,9 @@
     "webpack:server": "webpack --config webpack.server.config.js --display-error-details --progress --colors",
     "serve:universal": "node dist/server.js",
     "hmr": "ng serve --hmr -e=hmr",
-    "electron": "electron main.js"
+    "electron": "electron main.js",
+    "deploy": "shipit staging deploy",
+    "rollback": "shipit staging rollback"
   },
   "private": true,
   "dependencies": {
@@ -51,6 +53,8 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.2",
+    "shipit-cli": "~4.1.0",
+    "shipit-deploy": "~4.1.0",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
     "typescript": "~2.5.3"
